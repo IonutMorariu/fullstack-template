@@ -2,7 +2,17 @@ version: '3'
 services:
   mongo:
     image: 'mongo:latest'
-  server:
+  nginx:
+    restart: always
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./nginx
+    ports:
+      - '3050:80'
+    depends_on:
+      - api
+      - client
+  api:
     build:
       dockerfile: Dockerfile.dev
       context: ./server
@@ -12,7 +22,16 @@ services:
     environment:
       - TEST_DATABASE_URL=mongodb://mongo:27017/default
       - SECRET=123abc
-      - PORT=4000
+      - PORT=8000
       - NODE_ENV=development
     depends_on:
       - mongo
+  client:
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./client
+    volumes:
+      - /app/node_modules
+      - ./client:/app
+    depends_on:
+      - api
