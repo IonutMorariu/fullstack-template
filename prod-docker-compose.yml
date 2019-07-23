@@ -1,0 +1,25 @@
+version: '3'
+services:
+  mongo:
+    image: 'mongo:latest'
+  nginx:
+    restart: always
+    image: 'USERNAME/fullstack-nginx'
+    ports:
+      - '3050:80'
+    depends_on:
+      - api
+      - client
+  api:
+    image: 'USERNAME/fullstack-server'
+    environment:
+      - DATABASE_URL=mongodb://mongo:27017/default
+      - SECRET=123abc
+      - PORT=8000
+      - NODE_ENV=production
+    depends_on:
+      - mongo
+  client:
+    image: 'USERNAME/fullstack-client'
+    depends_on:
+      - api
