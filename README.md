@@ -1,4 +1,4 @@
-# Docker full stack template
+# Docker full stack template🐳🐳
 This fullstack template is intended to get you going with a GraphQL api (built on top on NodeJS with Express and Apollo server) and a React App (Build using create-react-app)
 
 The code for both server and client was grabbed from [@the-road-to-graphql](https://github.com/the-road-to-graphql).
@@ -28,7 +28,7 @@ To run the production server on both your machine or any linux machine (e.g digi
     docker login
     sh prod-build.sh
 
-On the machine that you're going to deploy pull just the prod-docker-compose.yml and replace "USERNAME" with your dockerhub username and the run
+On the machine that you're going to deploy pull just the prod-docker-compose.yml and replace "USERNAME" with your dockerhub username and then run
 
     docker-compose -d -f prod-docker-compose.yml up --build
 
