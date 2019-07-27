@@ -17,7 +17,7 @@ There are two docker-compose files:
 **1. Run the development server**
 To start up the development server just run the command
 
-    docker-compose -d -f dev-docker-compose.yml up --build
+    docker-compose -f dev-docker-compose.yml up --build -d
 This will get open up http://localhost:3050 where the react app will be running
 
 **2.Run the "production" server**
