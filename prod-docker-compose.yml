@@ -6,7 +6,12 @@ services:
     restart: always
     image: 'USERNAME/fullstack-nginx'
     ports:
-      - '3050:80'
+      - '80:80'
+      - '443:443'
+    volumes:
+      - ./data/certbot/conf:/etc/letsencrypt
+      - ./data/certbot/www:/var/www/certbot
+    command: '/bin/sh -c ''while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g "daemon off;"'''
     depends_on:
       - api
       - client
@@ -23,3 +28,10 @@ services:
     image: 'USERNAME/fullstack-client'
     depends_on:
       - api
+  certbot:
+    image: certbot/certbot
+    depends_on: client
+    volumes:
+      - ./data/certbot/conf:/etc/letsencrypt
+      - ./data/certbot/www:/var/www/certbot
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
