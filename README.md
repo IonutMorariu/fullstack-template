@@ -45,7 +45,7 @@ This will open the "production ready" server on port 443
 
 In order to get ssl working you need to change the email and domains in the files:
 
-- nginx default.conf
+- nginx/default.conf
 - init-letsencrypt.sh
 
 Note: If you want to have more than one server on the same linux machine, you will need to use another instance of nginx to reverse-proxy ports
@@ -56,7 +56,7 @@ This are my first steps into docker/docker-compose land as I'm learning my ways 
 
 ## TODO/Missing
 
-1.  ~~Add ssl support with let's encrypt~~ Done
+1.  ~~Add ssl support with let's encrypt~~ DONE
 2.  Add testing/CI support
 3.  Add typescript support
 4.  Anything that I've forgot to add and will remember in the future
