@@ -11,7 +11,7 @@ To get started you first need to have both [docker](https://docs.docker.com/inst
 There are two docker-compose files:
 
 1.  dev-docker-compose.yml is intended for development use as it has code watching and refreshing for both the server and the client code
-2.  prod-docker-compose.yml is intended for "production" use as it builds the react app using the react-scripts build command included with cra and compile es6 modules to commonJS modules using babel.
+2.  docker-compose.yml is intended for "production" use as it builds the react app using the react-scripts build command included with create-react-app and compile es6 modules to commonJS modules using babel.
 
 ## How to get started
 
