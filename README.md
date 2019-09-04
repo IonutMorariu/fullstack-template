@@ -30,7 +30,14 @@ On your machine you need to run the prod-build.sh command replacing USERNAME wit
     docker login
     sh prod-build.sh
 
-On the machine that you're going to deploy pull just the prod-docker-compose.yml and replace "USERNAME" with your dockerhub username and then run
+On the machine that you're going to deploy the files docker-compose.yml and init-letsencrypt.sh and replace "USERNAME" with your dockerhub username and then run:
+
+If it's the first time you are deploying this to a server you need to run this two commands:
+    
+    chmod +x ./init-letsencrypt.sh
+    sudo ./init-letsencrypt.sh
+    
+Any consecutive changes just run:
 
     docker-compose up --build -d
 
@@ -39,7 +46,7 @@ This will open the "production ready" server on port 443
 In order to get ssl working you need to change the email and domains in the files:
 
 - nginx default.conf
-- init letsencrypt.sh
+- init-letsencrypt.sh
 
 Note: If you want to have more than one server on the same linux machine, you will need to use another instance of nginx to reverse-proxy ports
 
