@@ -1,4 +1,4 @@
-# Docker full stack template🐳🐳
+# Docker full stack template
 
 This fullstack template is intended to get you going with a GraphQL api (built on top on NodeJS with Express and Apollo server) and a React App (Build using create-react-app)
 
