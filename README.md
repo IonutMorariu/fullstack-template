@@ -52,7 +52,7 @@ Note: If you want to have more than one server on the same linux machine, you wi
 
 ## Attention!
 
-This are my first steps into docker/docker-compose land as I'm learning my ways into containerized web development. Therefore there will be a lot of mistakes and wrongdoings, if you find and mistake please let me know or submit a PR and I will be more than happy to include it.
+This are my first steps into docker/docker-compose land as I'm learning my ways into containerized web development. Therefore there will be a lot of mistakes and wrongdoings, if you find any mistake please let me know or submit a PR and I will be more than happy to include it.
 
 ## TODO/Missing
 
